@@ -38,6 +38,20 @@ public class PlayerScript : MonoBehaviour {
         // 5 -move the game object
         transform.Translate(movement);
 
+        //shooting
+        bool shoot = Input.GetButtonDown("Fire1");
+        shoot |= Input.GetButtonDown("Fire2");
+
+        if(shoot)
+        {
+            WeaponScript weapon = GetComponent<WeaponScript>();
+            if (weapon!=null)
+            {
+                //false because the player i snot an enemy
+                weapon.Attack(false);
+
+            }
+        }
 	
 	}
 }
