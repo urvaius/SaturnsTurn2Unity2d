@@ -21,7 +21,15 @@ public class PlayerScript : MonoBehaviour {
     {
 	
 	}
-	
+
+    void OnDestroy()
+    {
+        // Game Over.
+        // Add the script to the parent because the current game
+        // object is likely going to be destroyed immediately.
+        transform.parent.gameObject.AddComponent<GameOverScript>();
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -49,6 +57,7 @@ public class PlayerScript : MonoBehaviour {
             {
                 //false because the player i snot an enemy
                 weapon.Attack(false);
+                SoundEffectsHelper.Instance.MakePlayerShotSound();
 
             }
         }
