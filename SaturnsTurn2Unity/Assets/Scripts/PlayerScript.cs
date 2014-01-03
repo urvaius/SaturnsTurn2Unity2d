@@ -38,8 +38,8 @@ public class PlayerScript : MonoBehaviour {
         float inputY = Input.GetAxis("Vertical");
 
         // 3 -movement per direction
-        Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
-
+       // Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+        Vector3 movement = new Vector3(0, speed.y * inputY, 0);
         // 4 -Relative to the time
         movement *= Time.deltaTime;
 
