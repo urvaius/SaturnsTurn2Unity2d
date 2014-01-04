@@ -63,7 +63,7 @@ public class PlayerScript : MonoBehaviour {
         }
 	
         //6 make sure we are not outside of camera bounds
-        var dist = (transform.position - Camera.main.transform.position ).z;
+        var dist = (transform.position - Camera.main.transform.position  ).z;
 
         var leftBorder = Camera.main.ViewportToWorldPoint(new Vector3(0,0, dist )).x  ;
 
@@ -73,7 +73,38 @@ public class PlayerScript : MonoBehaviour {
 
         var bottomBorder = Camera.main.ViewportToWorldPoint(new Vector3(0,1,dist)).y;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBorder, rightBorder), Mathf.Clamp(transform.position.y, topBorder, bottomBorder), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x , leftBorder, rightBorder), Mathf.Clamp(transform.position.y, topBorder, bottomBorder), transform.position.z);
 
+
+
+        //add in script to move background depending on where moving. 
+        if (transform.position.x > 8)
+        {
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = -1;
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.y = 0;
+
+        }
+        else
+        {
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = 0;
+        }
+        if (transform.position.x < 7)
+        {
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = 1;
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.y = 0;
+        }
+        else
+        {
+            // GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = 0;
+        }
+         if (transform.position.y > .5)
+        {
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.y = -1;
+          //  GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = 0;
+        }
+        else if (transform.position.y < .4)
+            GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.y = 1;
+          //   GameObject.Find("0-Background").GetComponent<ScrollingScript>().direction.x = 0;
+        
 	}
 }
