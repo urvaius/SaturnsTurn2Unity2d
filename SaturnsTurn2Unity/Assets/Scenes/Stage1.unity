@@ -894,7 +894,7 @@ GameObject:
   - 4: {fileID: 1461583317}
   - 114: {fileID: 1461583318}
   m_Layer: 0
-  m_Name: 0 -Back ground
+  m_Name: 0-Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,13 +919,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1461583316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63d7242e8cae371459a030bb653eb941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 1, y: 1}
-  direction: {x: -1, y: 0}
+  direction: {x: 0, y: 0}
   isLinkedToCamera: 0
   isLooping: 1
 --- !u!1 &1484780829
