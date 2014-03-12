@@ -248,8 +248,8 @@ InputManager:
     m_Name: rotateLeft
     descriptiveName: 'rotate left '
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: q
+    negativeButton: a
+    positiveButton: a
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -264,8 +264,8 @@ InputManager:
     m_Name: rotateRight
     descriptiveName: rotate right
     descriptiveNegativeName: 
-    negativeButton: e
-    positiveButton: e
+    negativeButton: d
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
