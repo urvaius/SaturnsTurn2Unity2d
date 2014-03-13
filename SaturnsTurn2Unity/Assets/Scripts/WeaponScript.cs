@@ -18,7 +18,7 @@ public class WeaponScript : MonoBehaviour
     /// Cooldown in seconds between two shots
     /// </summary>
     public float shootingRate = 0.25f;
-
+    public float speed = 10;
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
@@ -55,7 +55,9 @@ public class WeaponScript : MonoBehaviour
             var shotTransform = Instantiate(shotPrefab) as Transform;
 
             // Assign position
+            
             shotTransform.position = transform.position;
+           // shotTransform.rigidbody.AddRelativeForce(Vector3.forward * speed);
 
             // The is enemy property
             ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
@@ -65,10 +67,12 @@ public class WeaponScript : MonoBehaviour
             }
 
             // Make the weapon shot always towards it
-            MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
+            MoveShotScript move = shotTransform.gameObject.GetComponent<MoveShotScript>();
             if (move != null)
             {
+                
                 move.direction = this.transform.up; // towards in 2D space is the right of the sprite
+               
             }
         }
     }
