@@ -23,9 +23,9 @@ public class MoveShotScript : MonoBehaviour
     {
         // movement
         Vector3 movement = new Vector3(speed.x * direction.x, speed.y * direction.y, 0);
-        movement.Normalize();
+        //movement.Normalize();
         movement *= Time.deltaTime;
-        
+        transform.TransformPoint(Vector3.forward * 10);
         transform.Translate(movement);
         
 	}
