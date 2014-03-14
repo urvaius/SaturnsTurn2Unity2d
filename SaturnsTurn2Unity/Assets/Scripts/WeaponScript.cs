@@ -52,11 +52,18 @@ public class WeaponScript : MonoBehaviour
             shootCooldown = shootingRate;
 
             // Create a new shot
-            var shotTransform = Instantiate(shotPrefab) as Transform;
-
-            // Assign position
+           // var shotTransform = Instantiate(shotPrefab) as Transform;
+            Vector3 shotPosition = new Vector3(transform.position.x,transform.position.y );
+             var shotTransform = Instantiate(shotPrefab,shotPosition,Quaternion.Euler(shotPosition)) as Transform;
+           
             
-            shotTransform.position = transform.position;
+            // Assign position
+           //  Vector3 newRotation = transform.rotation.eulerAngles;
+           //  newRotation.x += transform.position.x;
+           //  newRotation.y += transform.position.y;
+           //  shotTransform.rotation = Quaternion.Euler(newRotation);
+           //// shotTransform.position = transform.position;
+            
            // shotTransform.rigidbody.AddRelativeForce(Vector3.forward * speed);
 
             // The is enemy property

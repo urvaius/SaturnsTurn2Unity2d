@@ -26,6 +26,9 @@ public class MoveShotScript : MonoBehaviour
         //movement.Normalize();
         movement *= Time.deltaTime;
         transform.TransformPoint(Vector3.forward * 10);
+        
+       // transform.Rotate(movement, 20);
+       // transform.rigidbody2D.AddForceAtPosition(speed, direction);
         transform.Translate(movement);
         
 	}
