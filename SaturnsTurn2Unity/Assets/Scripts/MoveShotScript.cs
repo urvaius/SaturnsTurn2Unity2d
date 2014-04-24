@@ -7,7 +7,7 @@ public class MoveShotScript : MonoBehaviour
     public Vector2 speed = new Vector2(10, 10);
 
     //direction
-    public Vector2 direction = new Vector2(-1, 0);
+    public Vector2 direction = new Vector2(-1, -1);
 
 
 	// Use this for initialization
@@ -26,6 +26,8 @@ public class MoveShotScript : MonoBehaviour
         //movement.Normalize();
         movement *= Time.deltaTime;
         transform.TransformPoint(Vector3.forward * 10);
+
+
         
        // transform.Rotate(movement, 20);
        // transform.rigidbody2D.AddForceAtPosition(speed, direction);
