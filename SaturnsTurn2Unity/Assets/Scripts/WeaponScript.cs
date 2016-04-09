@@ -19,6 +19,7 @@ public class WeaponScript : MonoBehaviour
     /// </summary>
     public float shootingRate = 0.25f;
     public float speed = 10;
+	public float projectileSpeed = 5;
     //--------------------------------
     // 2 - Cooldown
     //--------------------------------
@@ -78,7 +79,8 @@ public class WeaponScript : MonoBehaviour
             if (move != null)
             {
                 
-                move.direction = this.transform.up; // towards in 2D space is the right of the sprite
+               // move.direction = this.transform.up; // towards in 2D space is the right of the sprite
+				move.direction = transform.up;
                
             }
         }
